@@ -66,6 +66,17 @@
                                     <action selector="hh_qiandao:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yFM-lX-Wba"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05u-gk-aXn">
+                                <rect key="frame" x="157" y="562" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9VM-Us-dZy"/>
+                                    <constraint firstAttribute="height" constant="40" id="lUH-IR-eRI"/>
+                                </constraints>
+                                <state key="normal" title="点击动画"/>
+                                <connections>
+                                    <segue destination="FaF-Xx-uCN" kind="push" id="4sr-hS-yoX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,7 +87,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jst-hF-7Ts" secondAttribute="bottom" constant="100" id="NBa-gz-udN"/>
                             <constraint firstItem="xhF-i7-CeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="XdN-yw-5Tf"/>
                             <constraint firstItem="lio-pB-unq" firstAttribute="centerX" secondItem="Uqm-UK-r81" secondAttribute="centerX" id="YXj-Wn-Be9"/>
+                            <constraint firstItem="05u-gk-aXn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cLE-m6-TpG"/>
                             <constraint firstItem="Jst-hF-7Ts" firstAttribute="top" secondItem="eST-bQ-Rim" secondAttribute="bottom" constant="60" id="ifo-kW-9I1"/>
+                            <constraint firstItem="eST-bQ-Rim" firstAttribute="top" secondItem="05u-gk-aXn" secondAttribute="bottom" constant="30" id="k7F-dh-EUo"/>
                             <constraint firstItem="Jst-hF-7Ts" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qsg-5c-VJS"/>
                             <constraint firstItem="Uqm-UK-r81" firstAttribute="top" secondItem="xhF-i7-CeI" secondAttribute="bottom" constant="45" id="uH9-uO-SDT"/>
                             <constraint firstItem="xhF-i7-CeI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ucu-e0-tQ7"/>
@@ -91,6 +104,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="221.73913043478262" y="174.77678571428569"/>
+        </scene>
+        <!--Animation View Controller-->
+        <scene sceneID="NZa-bp-fyX">
+            <objects>
+                <viewController id="FaF-Xx-uCN" customClass="HHAnimationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8C-Id-LOb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqo-mp-I9t">
+                                <rect key="frame" x="100" y="188" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="e41-Ho-Xff"/>
+                                    <constraint firstAttribute="height" constant="49" id="gwG-Kj-eqz"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="first.png"/>
+                                <state key="selected" image="first_h.png"/>
+                                <connections>
+                                    <action selector="clicked:" destination="FaF-Xx-uCN" eventType="touchUpInside" id="FN6-e6-TzA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9P-6l-dBc">
+                                <rect key="frame" x="199" y="188" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="04v-yQ-ycQ"/>
+                                    <constraint firstAttribute="height" constant="49" id="6XE-TF-SHr"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="first.png"/>
+                                <state key="selected" image="first_h.png"/>
+                                <connections>
+                                    <action selector="clicked:" destination="FaF-Xx-uCN" eventType="touchUpInside" id="qOt-Fr-bhc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eYj-pP-Ole"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t9P-6l-dBc" firstAttribute="centerY" secondItem="Aqo-mp-I9t" secondAttribute="centerY" id="0BW-HJ-jSH"/>
+                            <constraint firstItem="t9P-6l-dBc" firstAttribute="leading" secondItem="Aqo-mp-I9t" secondAttribute="trailing" constant="50" id="TSY-wD-b7x"/>
+                            <constraint firstItem="Aqo-mp-I9t" firstAttribute="leading" secondItem="eYj-pP-Ole" secondAttribute="leading" constant="100" id="btL-LN-4Jg"/>
+                            <constraint firstItem="Aqo-mp-I9t" firstAttribute="top" secondItem="eYj-pP-Ole" secondAttribute="top" constant="100" id="jYR-aP-XkY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NxM-VA-qjM"/>
+                    <connections>
+                        <outlet property="firstBtn" destination="Aqo-mp-I9t" id="Yaq-U9-Usb"/>
+                        <outlet property="secondBtn" destination="t9P-6l-dBc" id="hgB-4t-2BM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djt-iY-RrT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XFs-Zt-gi1">
@@ -110,6 +175,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first.png" width="50" height="50"/>
+        <image name="first_h.png" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

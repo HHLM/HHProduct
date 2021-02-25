@@ -45,44 +45,9 @@
     [super awakeFromNib];
     self.infoLab.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -0.12);
     self.dataArray = @[self.icon1, self.icon2, self.icon3, self.icon4, self.icon5, self.icon6, self.icon7, self.icon8, self.icon9, self.icon10].mutableCopy;
-//    for (int i = 0; i < self.dataArray.count; i ++) {
-//        UIImageView *v = self.dataArray[i];
-//        UIImageView *imageV = [[UIImageView alloc] initWithFrame:v.frame];
-//        [self addSubview:imageV];
-//        imageV.hidden = YES;
-//    }
     [self addHuxiAnimation:self.qdButton];
-
-    //自定义一个图层
-//    [self addPopGroups];
     
     [self addFish];
-    
-//    CAReplicatorLayer *rLayer = [CAReplicatorLayer layer];
-//
-//    rLayer.frame = self.bounds;
-//
-//    [self.layer addSublayer:rLayer];
-//
-//
-//
-//    _ppLayer = [[CALayer alloc]init];
-//    _ppLayer.bounds = CGRectMake(0, 0, 20, 20);
-//    _ppLayer.position = CGPointMake(50, 35);
-//    _ppLayer.contents = (id)[UIImage imageNamed:@"ays_qd_pp.png"].CGImage;
-////    [self.layer addSublayer:_ppLayer];
-//
-//    /** 把layer添加到复制图层上 */
-//    [rLayer addSublayer:_ppLayer];
-//
-//    /** 要复制多少个layer */
-//    NSInteger count = 5;
-//
-//    rLayer.instanceCount = count;
-//    rLayer.instanceTransform = CATransform3DMakeTranslation(375/6.0, 0, 0);
-//    rLayer.instanceDelay = 0.5;
-//    //创建动画
-//    [self groupAnimation];
 }
 
 
@@ -106,11 +71,6 @@
         UIImageView *imageV = self.dataArray[count];
         [self addAnimation:imageV];
     }
-
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self show];
-//    });
-
     [sender setTitle:@"已签到" forState:UIControlStateNormal];
     self.qdButton.userInteractionEnabled = NO;
     [self.qdButton.layer removeAllAnimations];
@@ -171,18 +131,6 @@ CGFloat timeStr = -0.1;
     });
 
     [self groupAnimation];
-//    CAAnimationGroup *animationGroup = (CAAnimationGroup *)anim;
-//    CABasicAnimation *basicAnimation = animationGroup.animations[0];
-//    CAKeyframeAnimation *keyframeAnimation = animationGroup.animations[1];
-//    CGFloat toValue = [[basicAnimation valueForKey:@"KCBasicAnimationProperty_ToValue"] floatValue];
-//    CGPoint endPoint = [[keyframeAnimation valueForKey:@"KCKeyframeAnimationProperty_EndPosition"] CGPointValue];
-//
-//    [CATransaction begin];
-//    [CATransaction setDisableActions:YES];
-//    //设置动画最终状态
-//    _ppLayer.position = endPoint;
-//    _ppLayer.transform = CATransform3DMakeRotation(toValue, 0, 0, 1);
-//    [CATransaction commit];
 }
 
 
@@ -368,62 +316,4 @@ CGFloat timeStr = -0.1;
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
 }
 
-
-
-#pragma mark - 代理方法
-#pragma mark 动画完成
-
-/**
- - #define angle2Radian(angle) ((angle)/180.0*M_PI)
-
- - transform.rotation.x 围绕x轴翻转 参数：角度 angle2Radian(4)
-
- transform.rotation.y 围绕y轴翻转 参数：同上
-
- transform.rotation.z 围绕z轴翻转 参数：同上
-
- transform.rotation 默认围绕z轴
-
- transform.scale.x x方向缩放 参数：缩放比例 1.5
-
- transform.scale.y y方向缩放 参数：同上
-
- transform.scale.z z方向缩放 参数：同上
-
- transform.scale 所有方向缩放 参数：同上
-
- transform.translation.x x方向移动 参数：x轴上的坐标 100
-
- transform.translation.y x方向移动 参数：y轴上的坐标
-
- transform.translation.z x方向移动 参数：z轴上的坐标
-
- transform.translation 移动 参数：移动到的点 （100，100）
-
- opacity 透明度 参数：透明度 0.5
-
- backgroundColor 背景颜色 参数：颜色 (id)[[UIColor redColor] CGColor]
-
- cornerRadius 圆角 参数：圆角半径 5
-
- borderWidth 边框宽度 参数：边框宽度 5
-
- bounds 大小 参数：CGRect
-
- contents 内容 参数：CGImage
-
- contentsRect 可视内容 参数：CGRect 值是0～1之间的小数
-
- hidden 是否隐藏
-
- position
-
- shadowColor
-
- shadowOffset
-
- shadowOpacity
-
- shadowRadius
- */
 @end
